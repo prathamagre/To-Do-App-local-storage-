@@ -1,20 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>To Do App</title>
     <link rel="stylesheet" href="./style.css" />
 </head>
-<body>
-    <h1><u>To Do App</u></h1>
 
-    <div>
+<body>
+    <h1><u>To-Do App</u></h1>
+
+    <div id="tasks-container" class="list-container">
 
     </div>
 
     <script>
+        const tasks = [
+            "Revise JavaScript",
+            "Complete Assignments",
+            "Play Badminton"];
+
+        function loadTasks() {
+            const tasksContainer = document.getElementById("tasks-container");
+            tasksContainer.innerHTML = '';
+
+            for (const task of tasks) {
+                tasksContainer.innerHTML += `
+                
+            <div class="todo-item">
+                ${task} 
+                <div class="del-btn" type="button" onclick="deleteTask('${task}')">
+                    <img src="./img/delete-img.png" class="del-img">
+                </div>   
+            </div>
+            `
+            }
+        }
+
+        loadTasks();
+
+        function deleteTask(task) {
+            const taskIndex = tasks.indexOf(task);
+            tasks.splice(taskIndex, 1);
+
+            loadTasks();
+        }
 
     </script>
 </body>
+
 </html>

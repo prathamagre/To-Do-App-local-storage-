@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&family=Just+Another+Hand&display=swap');
+
+body {
+    background: url(./img/bg-img.jpg);
+    background-size: contain;
+}
+
+h1 {
+    font-family: "Fredericka the Great", serif;
+    font-weight: 600;
+    font-style: normal;
+    color: aliceblue;
+    text-align: center;
+    font-size: 40px;
+}
+
+.list-container {
+    border: none;
+    box-shadow: 0 0 10px 0 gray;
+    width: 80%;
+    margin: 20px auto;
+    padding: 15px;
+    border-radius: 10px;
+    height: 500px;
+    background: rgba(255, 255, 255, 0.8);
+}
+
+.todo-item {
+    border: none;
+    box-shadow: 0 0 5px 0;
+    margin: 15px;
+    border-radius: 10px;
+    font-size: 25px;
+    padding: 5px 20px;
+    background-color: aliceblue;
+    font-family: "Indie Flower", cursive;
+    font-weight: 700;
+    font-style: normal;
+    position: relative;
+}
+
+.del-img{
+    height: 30px;
+ 
+    right: 10px;
+    bottom: 10px;
+}
+
+.del-btn{
+    height: 30px;
+    position: absolute;
+    right: 10px;
+    bottom: 9px;
+    cursor: pointer;
+}
