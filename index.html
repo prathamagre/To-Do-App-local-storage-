@@ -11,17 +11,31 @@
 <body>
     <h1><u>To-Do App</u></h1>
 
+    <div class="input-container">
+        <input type="text" id="task-input" placeholder="Enter a new task" class="task-input"><br>
+        <button onclick="addTask()" class="action-btn">Add Task</button>
+        <button onclick="clearInput()" class="action-btn">Clear</button>
+    </div>
+
     <div id="tasks-container" class="list-container">
 
     </div>
 
     <script>
-        const tasks = [
-            "Revise JavaScript",
-            "Complete Assignments",
-            "Play Badminton"];
+        const tasks = [""];
+
+        function loadFromLocalStorage() {
+            const allTasks = JSON.parse(localStorage.getItem('allTasks'));
+            if (allTasks) {
+                tasks.length = 0;
+                tasks.push(...allTasks);
+            }
+            loadTasks();
+        }
 
         function loadTasks() {
+            localStorage.setItem('allTasks', JSON.stringify(tasks));
+
             const tasksContainer = document.getElementById("tasks-container");
             tasksContainer.innerHTML = '';
 
@@ -38,7 +52,22 @@
             }
         }
 
-        loadTasks();
+
+        function addTask() {
+            const inputElement = document.getElementById("task-input");
+            const newTask = inputElement.value;
+
+            if (!newTask) {
+                alert('Please Enter Task');
+                return;
+            }
+            tasks.push(newTask);
+            loadTasks();
+        }
+
+        function clearInput(){
+            document.getElementById("task-input").value='';
+        }
 
         function deleteTask(task) {
             const taskIndex = tasks.indexOf(task);
@@ -46,6 +75,8 @@
 
             loadTasks();
         }
+
+        loadFromLocalStorage();
 
     </script>
 </body>

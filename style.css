@@ -15,6 +15,31 @@ h1 {
     font-size: 40px;
 }
 
+.input-container{
+    text-align: center;
+}
+
+.task-input{
+    height: 30px;
+    border-radius: 5px;
+    border: solid rgb(1, 73, 1);
+    width: 30%;
+    margin-right: 10px;
+    margin-bottom: 15px;
+}
+
+.action-btn{
+    height: 30px;
+    border-radius: 5px;
+    border: solid rgb(1, 73, 1);
+    font-family: "Fredericka the Great", serif;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 20px;
+    margin: 5px;
+    cursor: pointer;
+}
+
 .list-container {
     border: none;
     box-shadow: 0 0 10px 0 gray;
@@ -22,8 +47,9 @@ h1 {
     margin: 20px auto;
     padding: 15px;
     border-radius: 10px;
-    height: 500px;
+    height: 400px;
     background: rgba(255, 255, 255, 0.8);
+    overflow-y: scroll;
 }
 
 .todo-item {
