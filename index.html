@@ -12,9 +12,8 @@
     <h1><u>To-Do App</u></h1>
 
     <div class="input-container">
-        <input type="text" id="task-input" placeholder="Enter a new task" class="task-input"><br>
+        <input type="text" id="task-input" placeholder="Enter a new task" class="task-input">
         <button onclick="addTask()" class="action-btn">Add Task</button>
-        <button onclick="clearInput()" class="action-btn">Clear</button>
     </div>
 
     <div id="tasks-container" class="list-container">
@@ -57,6 +56,8 @@
             const inputElement = document.getElementById("task-input");
             const newTask = inputElement.value;
 
+            document.getElementById("task-input").value='';
+
             if (!newTask) {
                 alert('Please Enter Task');
                 return;
@@ -66,7 +67,7 @@
         }
 
         function clearInput(){
-            document.getElementById("task-input").value='';
+           
         }
 
         function deleteTask(task) {

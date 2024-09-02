@@ -20,7 +20,7 @@ h1 {
 }
 
 .task-input{
-    height: 30px;
+    height: 29px;
     border-radius: 5px;
     border: solid rgb(1, 73, 1);
     width: 30%;
@@ -47,7 +47,7 @@ h1 {
     margin: 20px auto;
     padding: 15px;
     border-radius: 10px;
-    height: 400px;
+    height: 430px;
     background: rgba(255, 255, 255, 0.8);
     overflow-y: scroll;
 }
